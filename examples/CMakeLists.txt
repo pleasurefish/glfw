@@ -38,6 +38,7 @@ add_executable(particles WIN32 MACOSX_BUNDLE particles.c ${ICON} ${TINYCTHREAD} 
 add_executable(sharing WIN32 MACOSX_BUNDLE sharing.c ${ICON} ${GLAD_GL})
 add_executable(splitview WIN32 MACOSX_BUNDLE splitview.c ${ICON} ${GLAD_GL})
 add_executable(triangle-opengl WIN32 MACOSX_BUNDLE triangle-opengl.c ${ICON} ${GLAD_GL})
+add_executable(learn-gles WIN32 MACOSX_BUNDLE learn-gles.c ${ICON} ${GLAD_GL})
 add_executable(wave WIN32 MACOSX_BUNDLE wave.c ${ICON} ${GLAD_GL})
 
 target_link_libraries(particles "${CMAKE_THREAD_LIBS_INIT}")
@@ -45,7 +46,7 @@ if (RT_LIBRARY)
     target_link_libraries(particles "${RT_LIBRARY}")
 endif()
 
-set(WINDOWS_BINARIES boing gears heightmap particles sharing splitview triangle-opengl wave)
+set(WINDOWS_BINARIES boing gears heightmap particles sharing splitview triangle-opengl learn-gles wave)
 set(CONSOLE_BINARIES offscreen)
 
 set_target_properties(${WINDOWS_BINARIES} ${CONSOLE_BINARIES} PROPERTIES
@@ -64,6 +65,7 @@ if (APPLE)
     set_target_properties(particles PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Particles")
     set_target_properties(sharing PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Sharing")
     set_target_properties(triangle-opengl PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "OpenGL Triangle")
+    set_target_properties(learn-gles PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "learn openGLES")
     set_target_properties(splitview PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "SplitView")
     set_target_properties(wave PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME "Wave")
 

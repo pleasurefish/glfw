@@ -81,7 +81,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 
 static const GLfloat mvp[16] = {
 	-1.0, 0.0, 0.0, 0.0,
-	0.0, -1.0, 0.0, 0.0,
+	0.0, 1.0, 0.0, 0.0,
 	0.0, 0.0, 1.0, 0.0,
 	0.0, 0.0, 0.0, 1.0,
 };
